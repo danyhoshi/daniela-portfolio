@@ -19,7 +19,7 @@ jobs:
           npm install --save-dev eslint@8.45.0 eslint-config-next@14.0.4
           [ -f .eslintrc.cjs ] || cp .eslintrc.cjs.example .eslintrc.cjs
       - name: ESLint Report
-        run: npx eslint .
+        run: npm run lint
   stylelint:
     name: Stylelint
     runs-on: ubuntu-22.04
