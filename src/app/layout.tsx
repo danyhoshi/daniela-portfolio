@@ -17,9 +17,9 @@ export default function RootLayout({
 }) {
   
   return (
-    <html lang="en" className='relative'>  
+    <html lang="en">  
   
-      <body>
+      <body className='relative'>
           <Header /> 
           {children}
       </body>
