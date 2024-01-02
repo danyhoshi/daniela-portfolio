@@ -3,25 +3,61 @@
 @import 'tailwindcss/utilities';
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-base-bg: #1b1a17;
+  --color-light-bg: #1f1e1b;
+  --color-pri-text: #f0e3ca;
+  --color-title-text: #ff8303;
+  --color-base-bg-transp: #1f1e1bf7;
+  --color-navbar-active-bg: #171717cc;
+  --input-shadows: rgba(163, 163, 163, 1);
+  --color-title-transp: #ff830383;
+  --font-family: 'Inconsolata', monospace;
+  --font-family-logo: 'Anton', sans-serif;
+  --font-family-logo-sec: 'Inter', sans-serif;
+  --p-size: 1rem;
+  --p-size-small: 0.1rem;
+  --header-height: 4rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+html, 
 body {
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-  color: rgb(var(--foreground-rgb));
+  background-color: var(--color-base-bg);
+  box-sizing: border-box;  
+  color: var(--color-pri-text);
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 3rem);
+}
+
+a:active {
+  color: var(--color-title-text);
+  opacity: 0.7;
+}
+
+.menu-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--color-pri-text);
+  cursor: pointer;
+  padding: 0 1rem 0 0;
+  transition: transform 0.5s ease;
+}
+
+.menu-btn:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transform: rotate(360deg);
+}
+
+a:hover {
+  color: var(--color-title-text);
+  opacity: 0.7;
+  transition: opacity 0.5s ease;
+}
+
+a:focus {
+  color: var(--color-title-text);
+  opacity: 0.7;
+  transition: opacity 0.5s ease;
 }

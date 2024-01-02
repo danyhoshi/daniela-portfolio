@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import type { Metadata } from 'next'
-import HomePage from './ui/components/HomePage'
 export const metadata: Metadata = {
   title: 'Daniela Portfolio',
   description: 'Frontend developer Portfolio',
@@ -13,8 +11,10 @@ export const metadata: Metadata = {
     ]
   }
 }
-export default function Home() {
+export default function HomePage() {
   return (
-      <HomePage />
+    <main className="min-h-screen mt-[5rem]">
+      <p>Home</p>
+    </main>
   )
 }
