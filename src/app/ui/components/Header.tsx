@@ -34,7 +34,7 @@ export default function Header() {
                         <svg className="fill-[#f0e3ca]" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M12.45 38.7 9.3 35.55 20.85 24 9.3 12.5l3.15-3.2L24 20.8 35.55 9.3l3.15 3.2L27.2 24l11.5 11.55-3.15 3.15L24 27.2Z"/></svg>
                     </div>
                 </button>
-                <ul className={clsx(`flex flex-col lg:flex-row justify-center items-center lg:justify-end fixed w-full lg:relative gap-4 text-[1.2rem] ${inconsolata.className} mt-[4rem] pt-8 md:mt-0 lg:mt-0 pb-[1rem] lg:pt-[1em]  bg-[#00000055] lg:bg-transparent md:bg-transparent md:justify-evenly md:pt-[6rem]`,
+                <ul className={clsx(`flex flex-col lg:flex-row justify-center items-center lg:justify-end fixed w-full lg:relative gap-4 text-[1.2rem] ${inconsolata.className} font-bold mt-[4rem] pt-8 md:mt-0 lg:mt-0 pb-[1rem] lg:pt-[1em]  bg-[#000000dd] lg:bg-transparent md:bg-transparent md:justify-evenly md:pt-[6rem]`,
                 {
                     'block': menu,
                     'hidden': !menu,
