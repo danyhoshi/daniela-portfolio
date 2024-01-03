@@ -45,6 +45,64 @@ a:active {
   transition: transform 0.5s ease;
 }
 
+.multiline {
+  white-space: pre-line;
+}
+
+.container-headline {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+  justify-content: center;
+  letter-spacing: 0.025em;
+  min-height: 75vh;
+  width: 100%;
+  /* padding: 4rem 0 0 0; */
+}
+
+.presentation-container {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem;
+  max-width: 400px;
+  width: 80%;
+}
+
+.container-profile {
+  color: rgba(163, 87, 9, 0.5);
+  margin-top: 0;
+  /* min-height: 50vh; */
+  max-height: 302px;
+  max-width: 400px;
+  overflow: hidden;
+  position: relative;
+  width: 90%;
+}
+
+.btn-cv {
+  align-items: center;
+  background-color: #32312e;
+  border-color: transparent;
+  border-radius: 6px;
+  color: var(--color-pri-text);
+  display: flex;
+  flex-flow: column nowrap;
+  height: 56px;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 1s ease-in-out;
+  width: 99%;
+}
+
+.btn-cv:hover,
+.btn-cv:focus {
+  background-color: var(--color-title-transp);
+} 
+
 .menu-btn:active {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   transform: rotate(360deg);
