@@ -1,6 +1,8 @@
+'use client'
 import type { Metadata } from 'next'
-import { anton, inter, inconsolata } from '@/app/ui/fonts';
+import { inconsolata } from '@/app/ui/fonts';
 import Image from 'next/image'
+import { saveAs } from "file-saver"
 export const metadata: Metadata = {
   title: 'Daniela Portfolio',
   description: 'Frontend developer Portfolio',
@@ -14,6 +16,12 @@ export const metadata: Metadata = {
   }
 }
 export default function HomePage() {
+  const saveFile = () => {
+    saveAs(
+      "./Resume.pdf",
+      "Resume-Daniela.pdf"
+    );
+  };
   const code = `let button_menu = document.querySelector(".header_button"); 
   let float_menu = document.querySelector(".header_menu--float");  
   let line_top = document.querySelector(".header_button_line--top"); 
@@ -37,7 +45,7 @@ export default function HomePage() {
           <h1 className={`font-black text-[#ff8303] text-[2rem]`}>Daniela González</h1>
           <h2 className={`font-bold text-[1.5rem]`}>Frontend Developer</h2>
           <p className='text-[1.2rem] lg:max-w-[510px]'>I am a Computer Scientist and a Frontend Developer, I like to learn new things and practice them!</p>
-          <button className='btn-cv pointer font-black text-[1.2rem] lg:max-w-[50%]'>
+          <button className='btn-cv pointer font-black text-[1.2rem] lg:max-w-[50%]' onClick={ saveFile }>
             Get Resume
           </button>
         </div>
