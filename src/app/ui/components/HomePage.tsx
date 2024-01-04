@@ -39,8 +39,8 @@ export default function HomePage() {
         ${'\u00A0'} writeSymbols(); \n } } writeSymbols(); 
       } ...`;
   return (
-    <main className="min-h-screen mt-[5rem]">
-      <section className='container-headline lg:flex-row'>
+    <main className="mt-[5rem] lg:flex lg:justify-center">
+      <section className='container-headline lg:flex-row lg:max-w-[1024px]'>
         <div className={`presentation-container ${inconsolata.className} lg:max-w-[40%]`}> 
           <h1 className={`font-black text-[#ff8303] text-[2rem]`}>Daniela González</h1>
           <h2 className={`font-bold text-[1.5rem]`}>Frontend Developer</h2>
