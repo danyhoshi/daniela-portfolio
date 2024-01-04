@@ -98,6 +98,18 @@ a:active {
   width: 99%;
 }
 
+.about-me
+{
+  align-items: center;
+  background-color: var(--color-light-bg);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-top: 8rem;
+  width: 100%;
+}
+
 .btn-cv:hover,
 .btn-cv:focus {
   background-color: var(--color-title-transp);

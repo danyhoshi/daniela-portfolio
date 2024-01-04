@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AboutMe from '../ui/components/AboutMe'
 export const metadata: Metadata = {
   title: 'Daniela Portfolio',
   description: 'Frontend developer Portfolio',
@@ -13,8 +14,6 @@ export const metadata: Metadata = {
 }
 export default function aboutMe() {
   return (
-    <main className="min-h-screen mt-[5rem]">
-      <p>About me</p>
-    </main>
+    <AboutMe />
   )
 }
