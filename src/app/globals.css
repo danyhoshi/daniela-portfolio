@@ -111,32 +111,32 @@ a:active {
 }
 
 .my-skills {
+  align-items: center;
+  background-color: var(--color-base-bg);
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
-  background-color: var(--color-base-bg);
-  width: 100%;
+  justify-content: center;
   overflow-y:hidden;
   padding-bottom: 2rem;
+  width: 100%;
 }
 
 .skill {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
-  box-sizing: border-box;
-  font-size: calc(var(--p-size) + 1vw);
-  padding-left: 2rem;
-  width: 75%;
-  height: 4.5rem;
   background-color: var(--color-light-bg);
   border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: calc(var(--p-size) + 1vw);
+  gap: 1rem;
+  height: 4.5rem;
+  justify-content: flex-start;
   margin-top: 1rem;
+  padding-left: 2rem;
   transition: transform 0.5s ease-in-out;
+  width: 75%;
 }
 
 .skill div {
@@ -251,13 +251,13 @@ a:focus {
 }
 
 .animationL {
-  animation-name: myAnimationL;
   animation-duration: 2s;
+  animation-name: myAnimationL;
   animation-timing-function: ease-in-out;
 }
 
 .animationR {
-  animation-name: myAnimationR;
   animation-duration: 2s;
+  animation-name: myAnimationR;
   animation-timing-function: ease-in-out;
 }
