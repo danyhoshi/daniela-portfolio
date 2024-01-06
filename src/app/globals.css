@@ -7,7 +7,7 @@
   --color-light-bg: #1f1e1b;
   --color-pri-text: #f0e3ca;
   --color-title-text: #ff8303;
-  --color-base-bg-transp: #1f1e1bf7;
+  --color-base-bg-transp: #1f1e1bcc;
   --color-navbar-active-bg: #171717cc;
   --input-shadows: rgba(163, 163, 163, 1);
   --color-title-transp: #ff830383;
@@ -110,6 +110,7 @@ a:active {
   width: 100%;
 }
 
+.works,
 .my-skills {
   align-items: center;
   background-color: var(--color-base-bg);
@@ -120,6 +121,107 @@ a:active {
   overflow-y:hidden;
   padding-bottom: 2rem;
   width: 100%;
+}
+
+.work-card {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 300px;
+  justify-content: center;
+  /* max-width: 23.7rem;
+  min-width: 15rem;
+  max-height: 23.7rem;
+  min-height: 15rem; */
+  margin: 1rem 0 1rem 0;
+  position: relative;
+  transition: transform 1s ease-in-out;
+  width: 300px;
+}
+
+.container-project {
+  /* max-width: 23.7rem;
+  min-width: 15rem;
+  max-height: 23.7rem;
+  min-height: 15rem; */
+  border: 2px solid var(--color-base-bg-transp);
+  height: 300px;
+  left: 0;
+  position: relative;
+  top: 0;
+  width: 300px;
+  z-index: 9;
+}
+
+.work-card img {
+  height: 100%;
+  object-fit: cover; /* in the case of non-square images */
+  object-position: bottom;
+  user-select: none;
+  width: 100%;
+}
+
+.work-info {
+  align-items: center;
+  background-color: var(--color-base-bg-transp);
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  font: var(--font-family);
+  height: 100%;
+  justify-content: flex-start;
+  left: 0;
+  opacity: 1;
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.work-card button {
+  align-items: center;
+  background-color: #32312e;
+  border-color: transparent;
+  border-radius: 6px;
+  bottom: 1rem;
+  color: var(--color-pri-text);
+  display: flex;
+  flex-flow: column nowrap;
+  font: 600 var(--font-family) calc(var(--p-size) + 1vw)/var(--p-size);
+  height: 45 px;
+  justify-content: center;
+  left: 23%;
+  margin: 1rem;
+  padding: 1rem;
+  position: absolute;
+  text-align: center;
+  width: 45%;
+  z-index: 100;
+}
+
+.line {
+  border-top: 1px solid var(--color-title-text);
+  height: 1px;
+  max-width: 70%;
+  padding: 0;
+  text-align: center;
+}
+
+.line2 {
+  border-top: 1px solid var(--color-title-text);
+  height: 1px;
+  padding: 0;
+  text-align: center;
+  width: 90%;
+}
+
+.works > div > div .text {
+  font-size: calc(var(--p-size));
+  margin: 1rem 1rem;
+  min-height: 4vh;
+  overflow: hidden;
+  text-align: left;
+  width: 80%;
 }
 
 .skill {
@@ -218,6 +320,15 @@ a:hover {
   color: var(--color-title-text);
   opacity: 0.7;
   transition: opacity 0.5s ease;
+}
+
+.work-card:hover .work-info {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.work-card:hover {
+  transform: scale(1.07, 1.07);
 }
 
 a:focus {
