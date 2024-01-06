@@ -110,6 +110,100 @@ a:active {
   width: 100%;
 }
 
+.my-skills {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-base-bg);
+  width: 100%;
+  overflow-y:hidden;
+  padding-bottom: 2rem;
+}
+
+.skill {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  box-sizing: border-box;
+  font-size: calc(var(--p-size) + 1vw);
+  padding-left: 2rem;
+  width: 75%;
+  height: 4.5rem;
+  background-color: var(--color-light-bg);
+  border-radius: 6px;
+  margin-top: 1rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.skill div {
+  width: 2.5rem;
+}
+
+.skill svg {
+  fill: var(--color-pri-text);
+  transition: fill 0.7s ease-in-out;
+}
+
+.skill path, rect {
+  transition: fill 0.7s ease-in-out;
+}
+
+.skill:hover {
+  transform: translateY(-10%);
+}
+ 
+.html5:hover svg {
+  fill: #fc490b;
+}
+
+.css:hover svg {
+  fill: #2196f4;
+}
+
+.js:hover svg {
+  fill: #ffdf00;
+}
+
+.scss:hover svg {
+  fill: #ca669b;
+}
+
+.git:hover svg {
+  fill: #f25234;
+}
+
+.react:hover rect {
+  fill: #00d1f7;
+}
+
+.ts:hover path {
+  fill: #2d79c7;
+}
+
+.nextjs:hover path {
+  fill: #000000;
+}
+
+.tw:hover path {
+  fill: #38bdf8;
+}
+
+.boots:hover path {
+  fill: #7952b3;
+}
+
+.sc:hover path{
+  fill:#ee3f86;
+}
+
+.jest:hover path:first-child {
+  fill:#99425b;
+}
+
 .btn-cv:hover,
 .btn-cv:focus {
   background-color: var(--color-title-transp);
