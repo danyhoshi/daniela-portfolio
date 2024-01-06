@@ -41,7 +41,7 @@ export default function HomePage() {
   return (
     <main className="mt-[5rem] lg:flex lg:justify-center">
       <section className='container-headline lg:flex-row lg:max-w-[1024px]'>
-        <div className={`presentation-container ${inconsolata.className} lg:max-w-[40%]`}> 
+        <div className={`presentation-container ${inconsolata.className} lg:max-w-[40%] animationL`}> 
           <h1 className={`font-black text-[#ff8303] text-[2rem]`}>Daniela González</h1>
           <h2 className={`font-bold text-[1.5rem]`}>Frontend Developer</h2>
           <p className='text-[1.2rem] lg:max-w-[510px]'>I am a Computer Scientist and a Frontend Developer, I like to learn new things and practice them!</p>
@@ -49,7 +49,7 @@ export default function HomePage() {
             Get Resume
           </button>
         </div>
-        <div className='container-profile lg:max-w-[40%] lg:flex lg:flex-col lg:justify-center lg:items-center'>
+        <div className='container-profile lg:max-w-[40%] lg:flex lg:flex-col lg:justify-center lg:items-center animationR'>
             <p className={`text-[1rem] multiline ${inconsolata.className} max-h overflow-hidden lg:max-w-[510px]`}>{ code }</p>
             <Image 
               width="300" 

@@ -110,6 +110,100 @@ a:active {
   width: 100%;
 }
 
+.my-skills {
+  align-items: center;
+  background-color: var(--color-base-bg);
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  justify-content: center;
+  overflow-y:hidden;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.skill {
+  align-items: center;
+  background-color: var(--color-light-bg);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: calc(var(--p-size) + 1vw);
+  gap: 1rem;
+  height: 4.5rem;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  padding-left: 2rem;
+  transition: transform 0.5s ease-in-out;
+  width: 75%;
+}
+
+.skill div {
+  width: 2.5rem;
+}
+
+.skill svg {
+  fill: var(--color-pri-text);
+  transition: fill 0.7s ease-in-out;
+}
+
+.skill path, rect {
+  transition: fill 0.7s ease-in-out;
+}
+
+.skill:hover {
+  transform: translateY(-10%);
+}
+ 
+.html5:hover svg {
+  fill: #fc490b;
+}
+
+.css:hover svg {
+  fill: #2196f4;
+}
+
+.js:hover svg {
+  fill: #ffdf00;
+}
+
+.scss:hover svg {
+  fill: #ca669b;
+}
+
+.git:hover svg {
+  fill: #f25234;
+}
+
+.react:hover rect {
+  fill: #00d1f7;
+}
+
+.ts:hover path {
+  fill: #2d79c7;
+}
+
+.nextjs:hover path {
+  fill: #000000;
+}
+
+.tw:hover path {
+  fill: #38bdf8;
+}
+
+.boots:hover path {
+  fill: #7952b3;
+}
+
+.sc:hover path{
+  fill:#ee3f86;
+}
+
+.jest:hover path:first-child {
+  fill:#99425b;
+}
+
 .btn-cv:hover,
 .btn-cv:focus {
   background-color: var(--color-title-transp);
@@ -130,4 +224,40 @@ a:focus {
   color: var(--color-title-text);
   opacity: 0.7;
   transition: opacity 0.5s ease;
+}
+
+@keyframes myAnimationL {
+  from {
+    opacity: 0;
+    transform: translateX(-25%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes myAnimationR {
+  from {
+    opacity: 0;
+    transform: translateX(25%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.animationL {
+  animation-duration: 2s;
+  animation-name: myAnimationL;
+  animation-timing-function: ease-in-out;
+}
+
+.animationR {
+  animation-duration: 2s;
+  animation-name: myAnimationR;
+  animation-timing-function: ease-in-out;
 }
