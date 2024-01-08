@@ -58,7 +58,6 @@ a:active {
   letter-spacing: 0.025em;
   min-height: 75vh;
   width: 100%;
-  /* padding: 4rem 0 0 0; */
 }
 
 .presentation-container {
@@ -155,6 +154,7 @@ a:active {
 .work-info {
   align-items: center;
   background-color: var(--color-base-bg-transp);
+  border-radius: 5px;
   box-sizing: border-box;
   display: flex;
   flex-flow: column nowrap;
