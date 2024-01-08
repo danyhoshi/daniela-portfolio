@@ -11,7 +11,7 @@ export default function Header() {
         setMenu(prevState => !prevState)
     }
     return (
-        <header className="flex justify-center items-center fixed h-[4rem] md:h-[8rem] lg:h-[4rem] w-full bg-[#1b1a17] z-[999]">
+        <header className="flex justify-center items-center fixed h-[4rem] md:h-[8rem] lg:h-[4rem] w-full bg-[#1b1a17] z-[888]">
             <div className={`flex justify-between w-full lg:max-w-[1000px] md:justify-center md:items-center md:flex-col lg:justify-between lg:flex-row`}>
                 <div className={`text-[2.2rem] ${anton.className} pl-4 lg:basis-60 md:pl-0`}>
                     <span className={`${inter.className} text-[#ff8303] font-semibold`}>&lt;/</span><span className={`${anton.className} text-[#ff8303]`}>D</span>aniela<span className={`${inter.className} text-[#ff8303] font-bold`}>&gt;</span>
