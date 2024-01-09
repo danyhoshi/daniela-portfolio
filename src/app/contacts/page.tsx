@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Contacts from '../ui/components/Contacts'
 export const metadata: Metadata = {
   title: 'Daniela Portfolio',
   description: 'Frontend developer Portfolio',
@@ -13,8 +14,6 @@ export const metadata: Metadata = {
 }
 export default function petProjects() {
   return (
-    <main className="min-h-screen">
-      <p>contacts</p>
-    </main>
+    <Contacts />
   )
 }

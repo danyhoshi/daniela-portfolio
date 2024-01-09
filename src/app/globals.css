@@ -31,6 +31,19 @@ body {
   scroll-padding-top: calc(var(--header-height) + 3rem);
 }
 
+
+textarea {
+  width: 100%;
+  color: var(--color-pri-text);
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-pri-text);
+  border-bottom: 1px solid var(--color-pri-text);
+  border-radius: 3px;
+  line-height: 15px;
+  padding: 10px 40px 10px 10px;
+}
+
+
 a:active {
   color: var(--color-title-text);
   opacity: 0.7;
@@ -246,56 +259,196 @@ a:active {
   transition: fill 0.7s ease-in-out;
 }
 
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font: calc(var(--p-size) + 1vw);
+  width: 100%;
+  padding-bottom: 10vh;
+  box-sizing: border-box;
+}
+
+.group__form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+}
+
+.group__form-btn-form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.group__form-btn-form p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.label__form {
+  display: block;
+  font-weight: 700;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+
+.group-input__form {
+  position: relative;
+  width: 100%;
+}
+
+.input__form {
+  width: 100%;
+  color: var(--color-pri-text);
+  background-color: var(--color-bg-base);
+  border: 3px solid transparent;
+  border-bottom: 1px solid var(--color-pri-text);
+  border-radius: 3px;
+  height: 45px;
+  line-height: 15px;
+  padding: 0 40px 0 10px;
+}
+
+.input-error__form {
+  display: none;
+}
+
+.input-error__form-active {
+  display: block;
+}
+
+.input__form:focus {
+  border: 3px solid var(--color-title-text);
+  outline: none;
+  box-shadow: 3px 0 7px rgba(163, 163, 163, 0.4);
+}
+
+.validation-state__form {
+  position: absolute;
+  right: 10px; /* Position from right to left */
+  bottom: 10px;
+  top: 10px;
+  z-index: 99;
+  font-size: 1em;
+  opacity: 0; /* It doesn't show until I want to */
+}
+
+.btn__form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 56px;
+  color: var(--color-pri-text);
+  font: 600 var(--font-family) calc(var(--p-size) + 1vw)/var(--p-size);
+  text-align: center;
+  background-color: #32312e;
+  border-radius: 6px;
+  border-color: transparent;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.contacts {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 1rem 0 1rem;
+}
+
+.contacts li {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  align-items: center;
+  color: var(--color-title-text);
+  box-sizing: border-box;
+  font-size: calc(var(--p-size));
+  height: 4.5rem;
+  padding-left: 1rem;
+}
+
+.contacts a {
+  color: var(--color-title-text);
+}
+
+.message__form {
+  display: none;
+}
+
+.submit-success__form {
+  display: none;
+}
+
 .skill:hover {
   transform: translateY(-10%);
 }
- 
-.html5:hover svg {
-  fill: #fc490b;
+
+.html5, 
+.css, 
+.js, 
+.ts, 
+.git, 
+.react, 
+.nextjs,
+.jest,
+.tw, 
+.boots, 
+.sc {
+  transition: filter  0.3s ease-in-out;
 }
 
-.css:hover svg {
-  fill: #2196f4;
+.html5:hover {
+  filter: invert(65%) sepia(70%) saturate(7496%) hue-rotate(353deg) brightness(96%) contrast(105%);
+} 
+
+.css:hover {
+  filter: invert(52%) sepia(31%) saturate(6368%) hue-rotate(186deg) brightness(101%) contrast(91%);;
 }
 
-.js:hover svg {
-  fill: #ffdf00;
+.js:hover {
+  filter: invert(77%) sepia(81%) saturate(992%) hue-rotate(359deg) brightness(303%) contrast(105%);
 }
 
-.scss:hover svg {
-  fill: #ca669b;
+.ts:hover {
+  filter: invert(36%) sepia(96%) saturate(728%) hue-rotate(179deg) brightness(91%) contrast(83%);
 }
 
-.git:hover svg {
-  fill: #f25234;
+.git:hover {
+  filter: invert(66%) sepia(71%) saturate(6297%) hue-rotate(340deg) brightness(96%) contrast(98%);
 }
 
-.react:hover rect {
-  fill: #00d1f7;
+.react:hover {
+  filter: invert(79%) sepia(43%) saturate(6583%) hue-rotate(146deg) brightness(102%) contrast(101%);
 }
 
-.ts:hover path {
-  fill: #2d79c7;
+.nextjs:hover {
+  filter: invert(100%) brightness(0%) ;
 }
 
-.nextjs:hover path {
-  fill: #000000;
+.jest:hover {
+  filter: invert(32%) sepia(28%) saturate(1174%) hue-rotate(292deg) brightness(93%) contrast(86%);
 }
 
-.tw:hover path {
-  fill: #38bdf8;
+.tw:hover {
+  filter: invert(58%) sepia(90%) saturate(586%) hue-rotate(167deg) brightness(98%) contrast(99%);
 }
 
-.boots:hover path {
-  fill: #7952b3;
+.boots:hover {
+  filter: invert(38%) sepia(19%) saturate(1882%) hue-rotate(222deg) brightness(91%) contrast(87%);
 }
 
-.sc:hover path{
-  fill:#ee3f86;
-}
-
-.jest:hover path:first-child {
-  fill:#99425b;
+.sc:hover {
+  filter: invert(43%) sepia(35%) saturate(7360%) hue-rotate(313deg) brightness(98%) contrast(91%);
 }
 
 .btn-cv:hover,
