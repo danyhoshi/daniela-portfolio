@@ -84,7 +84,7 @@ export default function Projects() {
                   height="300"
                   src={ projects[viewModal.id].img }
                   alt={ projects[viewModal.id].title  }
-                  className='md:ml-4 rounded-lg html5'
+                  className='md:ml-4 rounded-lg'
                 />
                 <div className={`flex flex-col justify-center items-center pt-4`}>
                   <h4 className={`text-[1.7rem] text-[#ff8303] text-center font-black pt-3`}>{ projects[viewModal.id].title  }</h4>

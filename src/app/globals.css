@@ -87,7 +87,6 @@ a:active {
 .container-profile {
   color: rgba(163, 87, 9, 0.5);
   margin-top: 0;
-  /* min-height: 50vh; */
   max-height: 302px;
   max-width: 400px;
   overflow: hidden;
@@ -360,9 +359,43 @@ a:active {
 }
 
 .contacts {
+  /* display: flex;
+  flex-flow: column nowrap; */
+  margin: 0 1rem 0 1rem;
+}
+
+.footer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 3rem;
+  background-color: var(--color-light-bg);
+  width: 100%;
+  padding-bottom: var(--header-height);
+}
+
+.contacts {
   display: flex;
   flex-flow: column nowrap;
   margin: 0 1rem 0 1rem;
+}
+
+.contacts li {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  align-items: center;
+  color: var(--color-title-text);
+  box-sizing: border-box;
+  font-size: calc(var(--p-size));
+  height: 4.5rem;
+  padding-left: 1rem;
+}
+
+.contacts a {
+  color: var(--color-title-text);
 }
 
 .contacts li {
