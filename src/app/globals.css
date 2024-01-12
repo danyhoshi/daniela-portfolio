@@ -266,8 +266,8 @@ a:active {
   gap: 1rem;
   font: calc(var(--p-size) + 1vw);
   width: 100%;
-  padding-bottom: 10vh;
   box-sizing: border-box;
+  background-color: var(--color-light-bg);
 }
 
 .group__form {
@@ -321,6 +321,12 @@ a:active {
   display: none;
 }
 
+textarea:focus {
+  border: 3px solid var(--color-title-text);
+  outline: none;
+  box-shadow: 3px 0 7px rgba(163, 163, 163, 0.4);
+}
+
 .input-error__form-active {
   display: block;
 }
@@ -359,8 +365,6 @@ a:active {
 }
 
 .contacts {
-  /* display: flex;
-  flex-flow: column nowrap; */
   margin: 0 1rem 0 1rem;
 }
 
