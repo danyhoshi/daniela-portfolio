@@ -30,8 +30,9 @@ type Inputs = {
 }
 
 export default function Contacts() {
-  const [formSpreeState, sendToFormSpree] = useFormSpree("xwkjnvdr");
-  const { register, handleSubmit, formState: { errors, isSubmitting }, watch, reset } = useForm<Inputs>({
+  const keyForm: string = process.env.NEXT_PUBLIC_KEY_FORM ?? ''
+  const [formSpreeState, sendToFormSpree] = useFormSpree(keyForm);
+  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<Inputs>({
       defaultValues: {
         name: '',
         lastname: '',
