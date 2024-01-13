@@ -1,7 +1,8 @@
 'use client'
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
+import clsx from 'clsx';
 import { Transition } from "@headlessui/react";
  import { useForm } from 'react-hook-form'  
 import { useForm as useFormSpree } from "@formspree/react";       
@@ -30,6 +31,10 @@ type Inputs = {
 }
 
 export default function Contacts() {
+  const [closed, setClosed]  = useState(false);
+  const handleClickClose = () => {
+    setClosed(true)
+  }
   const keyForm: string = process.env.NEXT_PUBLIC_KEY_FORM ?? ''
   const [formSpreeState, sendToFormSpree] = useFormSpree(keyForm);
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<Inputs>({
@@ -44,7 +49,11 @@ export default function Contacts() {
   
   const onSubmit = (data: Inputs) => {
    sendToFormSpree(data);   
-   if(formSpreeState.succeeded)  reset()
+   if(formSpreeState.succeeded) { 
+    reset();  
+  }else{
+    setClosed(false)
+  } 
  };
  
   return (
@@ -80,7 +89,7 @@ export default function Contacts() {
             <div className="group__form">
               <label className="label__form">Message</label>
               <div className="group-input__form">
-                <textarea data-pattern="^.{1,500}$" title="Please, insert max 500 characters." id="message" placeholder="Let's talk about projects..." {...register('message')} disabled={isSubmitting}></textarea>
+                <textarea className={`resize-none`} rows={ 10 } cols={ 60 } id="message" placeholder="Let's talk about projects..." {...register('message')} disabled={isSubmitting}></textarea>
               </div>
               { errors.message?.message && <div className={`${inconsolata.className} text-[#e94c4c] drop-shadow`}>{ errors.message?.message }</div> }
             </div>        
@@ -109,7 +118,7 @@ export default function Contacts() {
       {formSpreeState.errors && (
         <Transition
           as={Fragment}
-          show={formSpreeState.errors.getFormErrors().length > 0}
+          show={formSpreeState.errors.getFormErrors().length > 0 && !formSpreeState.submitting}
           enter="transition ease-out duration-200"
           enterFrom="transform opacity-0 scale-95"
           enterTo="transform opacity-100 scale-100"
@@ -117,13 +126,18 @@ export default function Contacts() {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <div className="flex flex-col justify-center items-center absolute top-0 left-0 h-full w-full bg-[#1b1a17] bg-opacity-90">
+          <div className={clsx(`flex flex-col justify-center items-center absolute top-0 left-0 h-full w-full bg-[#1b1a17] bg-opacity-90`, {
+              "hidden": closed && !formSpreeState.submitting,
+          })}>
+        
               <Image width='48' 
                       height='48' 
                       alt='close-icon' 
                       src={ close } 
-                    />  
-            <p className={`mt-10 text-xl text-accent font-bold ${inconsolata.className} text-[#ff8303]`}>I apologize for the inconvenience, something went wrong.</p>
+                      onClick={ handleClickClose }
+                    /> 
+      
+            <p className={`mt-10 text-xl text-accent font-bold ${inconsolata.className} text-[#ff8303] text-center`}>I apologize for the inconvenience, something went wrong.</p>
             <p className={`text-lg ${inconsolata.className} text-[#ff8303]`}>Please try again in a few minutes.</p>
           </div>
         </Transition> 
@@ -153,13 +167,13 @@ export default function Contacts() {
     <footer className={`footer ${inconsolata.className}`}>
         <div className={`flex flex-col justify-center items-center lg:flex-row w-full md:max-w-[800px]`}>
           <div className={`flex flex-col justify-center items-center`}>
-            <div className={`text-[2.2rem] ${anton.className} pl-4 lg:self-start`}>
+            <div className={`text-[2.2rem] ${anton.className} lg:pl-4 lg:self-start`}>
                 <span className={`${inter.className} text-[#ff8303] font-semibold`}>&lt;/</span><span className={`${anton.className} text-[#ff8303]`}>D</span>aniela<span className={`${inter.className} text-[#ff8303] font-bold`}>&gt;</span>
               </div>
               <p className={`w-[80%] pt-4`}>If you liked my work and you need me, I'm ready to talk to you.</p>
           </div>
           <div className={`flex flex-col justify-center items-center gap-3 text-center pt-6 w-full md:w-[800px]`}>
-            <h2 className={`text-[2.2rem] ${anton.className} text-[#ff8303] pl-4 lg:self-start`}>CONTACTS</h2>
+            <h2 className={`text-[2.2rem] ${anton.className} text-[#ff8303] lg:pl-4 lg:self-start`}>CONTACTS</h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 text-[#ff8303]">
                 <li className='flex flex-row items-center gap-2 pb-3'>
                   <Link href="mailto:1989.daniela@gmail.com" target="blank" rel="noopener" aria-label="email-link">

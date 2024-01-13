@@ -15,7 +15,9 @@ export const formInfoSchema = z.object({
     .regex(reg, { message: 'The lastname can only contain letters and spaces' }),
     email: z
     .string()
+    .min(5, { message: 'Please insert a valid email address.' })
     .email({message: 'Please insert a valid email address.'}),
+
     message: z
     .string()
     .min(10, {message: 'The message requires at least 10 characters'})
