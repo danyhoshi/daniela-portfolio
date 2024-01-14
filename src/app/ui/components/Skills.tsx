@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function Skills() {
   return (
     <main className="pt-[7rem] flex flex-col justify-center items-center">
-        <section className="my-skills md:flex-row max-w-4xl md:pt-6">
+        <section className="my-skills md:flex-row max-w-4xl md:pt-6 md:pl-3 md:pr-3">
           <div className={`skill text-[0.7rem] ${inconsolata.className} md:flex-col md:justify-center md:items-center md:w-[180px] md:h-[230px] md:gap-0 md:pl-0`}>
             <Image 
               width="114"

@@ -170,7 +170,7 @@ export default function Contacts() {
             <div className={`text-[2.2rem] ${anton.className} lg:pl-4 lg:self-start`}>
                 <span className={`${inter.className} text-[#ff8303] font-semibold`}>&lt;/</span><span className={`${anton.className} text-[#ff8303]`}>D</span>aniela<span className={`${inter.className} text-[#ff8303] font-bold`}>&gt;</span>
               </div>
-              <p className={`w-[80%] pt-4`}>If you liked my work and you need me, I'm ready to talk to you.</p>
+              <p className={`w-[80%] pt-4`}>If you liked my work and you need me, I&apos;m ready to talk to you.</p>
           </div>
           <div className={`flex flex-col justify-center items-center gap-3 text-center pt-6 w-full md:w-[800px]`}>
             <h2 className={`text-[2.2rem] ${anton.className} text-[#ff8303] lg:pl-4 lg:self-start`}>CONTACTS</h2>
