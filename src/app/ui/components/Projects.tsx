@@ -53,6 +53,7 @@ export default function Projects() {
                       src={p.img}
                       alt={p.title}
                       className='rounded-lg'
+                      priority={true}
                   />
               </div>
               <div className={`work-info ${inconsolata.className}`}>
@@ -84,6 +85,7 @@ export default function Projects() {
                   height="300"
                   src={ projects[viewModal.id].img }
                   alt={ projects[viewModal.id].title  }
+                  priority={false}
                   className='md:ml-4 rounded-lg'
                 />
                 <div className={`flex flex-col justify-center items-center pt-4`}>
