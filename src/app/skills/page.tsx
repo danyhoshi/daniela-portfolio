@@ -1,6 +1,5 @@
-import Image from 'next/image'
 import type { Metadata } from 'next'
-import HomePage from './ui/components/HomePage'
+import Skills from '../ui/components/Skills'
 export const metadata: Metadata = {
   title: 'Daniela Portfolio',
   description: 'Frontend developer Portfolio',
@@ -13,8 +12,8 @@ export const metadata: Metadata = {
     ]
   }
 }
-export default function Home() {
+export default function skills() {
   return (
-      <HomePage />
+    <Skills />
   )
 }

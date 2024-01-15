@@ -1,27 +1,544 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-base-bg: #1b1a17;
+  --color-light-bg: #1f1e1b;
+  --color-pri-text: #f0e3ca;
+  --color-title-text: #ff8303;
+  --color-base-bg-transp: #1f1e1bcc;
+  --color-navbar-active-bg: #171717cc;
+  --input-shadows: rgba(163, 163, 163, 1);
+  --color-title-transp: #ff830383;
+  --font-family: 'Inconsolata', monospace;
+  --font-family-logo: 'Anton', sans-serif;
+  --font-family-logo-sec: 'Inter', sans-serif;
+  --p-size: 1rem;
+  --p-size-small: 0.1rem;
+  --header-height: 4rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+html, 
+body {
+  background-color: var(--color-base-bg);
+  box-sizing: border-box;  
+  color: var(--color-pri-text);
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 3rem);
+}
+
+textarea {
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-pri-text);
+  border-bottom: 1px solid var(--color-pri-text);
+  border-radius: 3px;
+  color: var(--color-pri-text);
+  line-height: 15px;
+  padding: 10px 40px 10px 10px;
+  width: 100%;
+}
+
+textarea:focus {
+  border: 3px solid var(--color-title-text);
+  box-shadow: 3px 0 7px rgba(163, 163, 163, 0.4);
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  border: 1px solid var(--color-pri-text);
+  -webkit-box-shadow: 0 0 0 1000px var(--color-light-bg) inset;
+  caret-color: var(--color-pri-text);
+  -webkit-text-fill-color: var(--color-pri-text);
+}
+
+a:active {
+  color: var(--color-title-text);
+  opacity: 0.7;
+}
+
+.menu-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--color-pri-text);
+  cursor: pointer;
+  padding: 0 1rem 0 0;
+  transition: transform 0.5s ease;
+}
+
+.multiline {
+  white-space: pre-line;
+}
+
+.container-headline {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+  justify-content: center;
+  letter-spacing: 0.025em;
+  min-height: 75vh;
+  width: 100%;
+}
+
+.presentation-container {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem;
+  max-width: 400px;
+  width: 80%;
+}
+
+.container-profile {
+  color: rgba(163, 87, 9, 0.5);
+  margin-top: 0;
+  max-height: 302px;
+  max-width: 400px;
+  overflow: hidden;
+  position: relative;
+  width: 90%;
+}
+
+.btn-cv {
+  align-items: center;
+  background-color: #32312e;
+  border-color: transparent;
+  border-radius: 6px;
+  color: var(--color-pri-text);
+  display: flex;
+  flex-flow: column nowrap;
+  height: 56px;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 1s ease-in-out;
+  width: 99%;
+}
+
+.about-me
+{
+  align-items: center;
+  background-color: var(--color-light-bg);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-top: 8rem;
+  width: 100%;
+}
+
+.works,
+.my-skills {
+  align-items: center;
+  background-color: var(--color-base-bg);
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  justify-content: center;
+  overflow-y:hidden;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.work-card {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 300px;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
+  position: relative;
+  transition: transform 1s ease-in-out;
+  width: 300px;
+}
+
+.container-project {
+  border: 2px solid var(--color-base-bg-transp);
+  height: 300px;
+  left: 0;
+  position: relative;
+  top: 0;
+  width: 300px;
+  z-index: 9;
+}
+
+.work-card img {
+  height: 100%;
+  object-fit: cover; /* in the case of non-square images */
+  object-position: bottom;
+  user-select: none;
+  width: 100%;
+}
+
+.work-info {
+  align-items: center;
+  background-color: var(--color-base-bg-transp);
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  font: var(--font-family);
+  height: 100%;
+  justify-content: flex-start;
+  left: 0;
+  opacity: 1;
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.work-card button {
+  align-items: center;
+  background-color: #32312e;
+  border-color: transparent;
+  border-radius: 6px;
+  bottom: 1rem;
+  color: var(--color-pri-text);
+  display: flex;
+  flex-flow: column nowrap;
+  font: 600 var(--font-family) calc(var(--p-size) + 1vw)/var(--p-size);
+  height: 45 px;
+  justify-content: center;
+  left: 23%;
+  margin: 1rem;
+  padding: 1rem;
+  position: absolute;
+  text-align: center;
+  width: 45%;
+  z-index: 100;
+}
+
+.line {
+  border-top: 1px solid var(--color-title-text);
+  height: 1px;
+  max-width: 70%;
+  padding: 0;
+  text-align: center;
+}
+
+.line2 {
+  border-top: 1px solid var(--color-title-text);
+  height: 1px;
+  padding: 0;
+  text-align: center;
+  width: 90%;
+}
+
+.works > div > div .text {
+  font-size: calc(var(--p-size));
+  margin: 1rem 1rem;
+  min-height: 4vh;
+  overflow: hidden;
+  text-align: left;
+  width: 80%;
+}
+
+.skill {
+  align-items: center;
+  background-color: var(--color-light-bg);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: calc(var(--p-size) + 1vw);
+  gap: 1rem;
+  height: 4.5rem;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  padding-left: 2rem;
+  transition: transform 0.5s ease-in-out;
+  width: 75%;
+}
+
+.skill div {
+  width: 2.5rem;
+}
+
+.skill svg {
+  fill: var(--color-pri-text);
+  transition: fill 0.7s ease-in-out;
+}
+
+.skill path, rect {
+  transition: fill 0.7s ease-in-out;
+}
+
+.form {
+  align-items: center;
+  background-color: var(--color-light-bg);
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  font: calc(var(--p-size) + 1vw);
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.group__form {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 80%;
+}
+
+.group__form-btn-form {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 80%;
+}
+
+.group__form-btn-form p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.label__form {
+  cursor: pointer;
+  display: block;
+  font-weight: 700;
+  padding: 0.7rem;
+}
+
+.group-input__form {
+  position: relative;
+  width: 100%;
+}
+
+.input__form {
+  background-color: var(--color-bg-base);
+  border: 3px solid transparent;
+  border-bottom: 1px solid var(--color-pri-text);
+  border-radius: 3px;
+  color: var(--color-pri-text);
+  height: 45px;
+  line-height: 15px;
+  padding: 0 40px 0 10px;
+  width: 100%;
+}
+
+.input-error__form {
+  display: none;
+}
+
+.input-error__form-active {
+  display: block;
+}
+
+.input__form:focus {
+  border: 3px solid var(--color-title-text);
+  box-shadow: 3px 0 7px rgba(163, 163, 163, 0.4);
+  outline: none;
+}
+
+.validation-state__form {
+  bottom: 10px;
+  font-size: 1em;
+  opacity: 0; /* It doesn't show until I want to */
+  position: absolute;
+  right: 10px; /* Position from right to left */
+  top: 10px;
+  z-index: 99;
+}
+
+.btn__form {
+  align-items: center;
+  background-color: #32312e;
+  border-color: transparent;
+  border-radius: 6px;
+  color: var(--color-pri-text);
+  display: flex;
+  flex-flow: column nowrap;
+  font: 600 var(--font-family) calc(var(--p-size) + 1vw)/var(--p-size);
+  height: 56px;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  width: 45%;
+}
+
+.contacts {
+  margin: 0 1rem 0 1rem;
+}
+
+.footer {
+  align-items: center;
+  background-color: var(--color-light-bg);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin-top: auto;
+  padding-bottom: var(--header-height);
+  padding-top: 3rem;
+  width: 100%;
+}
+
+.contacts a {
+  color: var(--color-title-text);
+}
+
+.contacts li {
+  align-items: center;
+  box-sizing: border-box;
+  color: var(--color-title-text);
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: calc(var(--p-size));
+  gap: 1rem;
+  height: 4.5rem;
+  padding-left: 1rem;
+}
+
+.message__form {
+  display: none;
+}
+
+.submit-success__form {
+  display: none;
+}
+
+.skill:hover {
+  transform: translateY(-10%);
+}
+
+.html5, 
+.css, 
+.js, 
+.ts, 
+.git, 
+.react, 
+.nextjs,
+.jest,
+.tw, 
+.boots, 
+.sc {
+  transition: filter  0.3s ease-in-out;
+}
+
+.html5:hover {
+  filter: invert(65%) sepia(70%) saturate(7496%) hue-rotate(353deg) brightness(96%) contrast(105%);
+} 
+
+.css:hover {
+  filter: invert(52%) sepia(31%) saturate(6368%) hue-rotate(186deg) brightness(101%) contrast(91%);;
+}
+
+.js:hover {
+  filter: invert(77%) sepia(81%) saturate(992%) hue-rotate(359deg) brightness(303%) contrast(105%);
+}
+
+.ts:hover {
+  filter: invert(36%) sepia(96%) saturate(728%) hue-rotate(179deg) brightness(91%) contrast(83%);
+}
+
+.git:hover {
+  filter: invert(66%) sepia(71%) saturate(6297%) hue-rotate(340deg) brightness(96%) contrast(98%);
+}
+
+.react:hover {
+  filter: invert(79%) sepia(43%) saturate(6583%) hue-rotate(146deg) brightness(102%) contrast(101%);
+}
+
+.nextjs:hover {
+  filter: invert(100%) brightness(0%) ;
+}
+
+.jest:hover {
+  filter: invert(32%) sepia(28%) saturate(1174%) hue-rotate(292deg) brightness(93%) contrast(86%);
+}
+
+.tw:hover {
+  filter: invert(58%) sepia(90%) saturate(586%) hue-rotate(167deg) brightness(98%) contrast(99%);
+}
+
+.boots:hover {
+  filter: invert(38%) sepia(19%) saturate(1882%) hue-rotate(222deg) brightness(91%) contrast(87%);
+}
+
+.sc:hover {
+  filter: invert(43%) sepia(35%) saturate(7360%) hue-rotate(313deg) brightness(98%) contrast(91%);
+}
+
+.btn-cv:hover,
+.btn-cv:focus {
+  background-color: var(--color-title-transp);
+} 
+
+.menu-btn:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transform: rotate(360deg);
+}
+
+a:hover {
+  color: var(--color-title-text);
+  opacity: 0.7;
+  transition: opacity 0.5s ease;
+}
+
+.work-card:hover .work-info {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.work-card:hover {
+  transform: scale(1.07, 1.07);
+}
+
+a:focus {
+  color: var(--color-title-text);
+  opacity: 0.7;
+  transition: opacity 0.5s ease;
+}
+
+@keyframes myAnimationL {
+  from {
+    opacity: 0;
+    transform: translateX(-25%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes myAnimationR {
+  from {
+    opacity: 0;
+    transform: translateX(25%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.animationL {
+  animation-duration: 2s;
+  animation-name: myAnimationL;
+  animation-timing-function: ease-in-out;
+}
+
+.animationR {
+  animation-duration: 2s;
+  animation-name: myAnimationR;
+  animation-timing-function: ease-in-out;
 }
