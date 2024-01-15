@@ -6,6 +6,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import projects from '@/app/lib/projects';
+import { close } from './assets';
 export const metadata: Metadata = {
   title: 'Daniela Portfolio',
   description: 'Frontend developer Portfolio',
@@ -52,6 +53,7 @@ export default function Projects() {
                       src={p.img}
                       alt={p.title}
                       className='rounded-lg'
+                      priority={true}
                   />
               </div>
               <div className={`work-info ${inconsolata.className}`}>
@@ -71,14 +73,19 @@ export default function Projects() {
                                 'pointer-events-none': !viewModal.view    
                             })}>
           <div className={`bg-[#1b1a17] w-[90%] h-[670px] md:w-[90%] md:max-w-[900px] md:h-[380px] relative rounded-lg z-[901]`}>
-            <svg onClick={ closeModal } className={`absolute top-o right-0 fill-[#ff8303] z-[999]`} xmlns="http://www.w3.org/2000/svg" height="48" width="48" viewBox="0 96 960 960"><path d="m338 768 142-142 142 142 50-50-142-142 142-142-50-50-142 142-142-142-50 50 142 142-142 142 50 50Zm142.138 233q-88.138 0-165.625-33.084-77.488-33.083-135.417-91.012T88.084 741.625Q55 664.276 55 576.138 55 487 88.084 409.513q33.083-77.488 90.855-134.969 57.772-57.482 135.195-91.013Q391.557 150 479.779 150q89.221 0 166.827 33.454 77.605 33.453 135.012 90.802 57.407 57.349 90.895 134.877Q906 486.66 906 576q0 88.276-33.531 165.747-33.531 77.471-91.013 135.278-57.481 57.808-134.831 90.891Q569.276 1001 480.138 1001Z"/></svg>
-            
+              <Image width='48' 
+                height='48' 
+                alt='close-icon' 
+                src={ close } 
+                onClick={ closeModal } 
+                className={`absolute top-o right-0 fill-[#ff8303] z-[999]`} />    
                 <div className={`flex flex-col justify-start items-center md:flex-row md:justify-center w-full h-full pt-9 md:pt-1 overflow-y-scroll lg:overflow-y-hidden`}>
                 <Image 
                   width="300"
                   height="300"
                   src={ projects[viewModal.id].img }
                   alt={ projects[viewModal.id].title  }
+                  priority={false}
                   className='md:ml-4 rounded-lg'
                 />
                 <div className={`flex flex-col justify-center items-center pt-4`}>

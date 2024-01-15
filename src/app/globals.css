@@ -31,6 +31,35 @@ body {
   scroll-padding-top: calc(var(--header-height) + 3rem);
 }
 
+textarea {
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-pri-text);
+  border-bottom: 1px solid var(--color-pri-text);
+  border-radius: 3px;
+  color: var(--color-pri-text);
+  line-height: 15px;
+  padding: 10px 40px 10px 10px;
+  width: 100%;
+}
+
+textarea:focus {
+  border: 3px solid var(--color-title-text);
+  box-shadow: 3px 0 7px rgba(163, 163, 163, 0.4);
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  border: 1px solid var(--color-pri-text);
+  -webkit-box-shadow: 0 0 0 1000px var(--color-light-bg) inset;
+  caret-color: var(--color-pri-text);
+  -webkit-text-fill-color: var(--color-pri-text);
+}
+
 a:active {
   color: var(--color-title-text);
   opacity: 0.7;
@@ -74,7 +103,6 @@ a:active {
 .container-profile {
   color: rgba(163, 87, 9, 0.5);
   margin-top: 0;
-  /* min-height: 50vh; */
   max-height: 302px;
   max-width: 400px;
   overflow: hidden;
@@ -246,56 +274,206 @@ a:active {
   transition: fill 0.7s ease-in-out;
 }
 
+.form {
+  align-items: center;
+  background-color: var(--color-light-bg);
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  font: calc(var(--p-size) + 1vw);
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.group__form {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 80%;
+}
+
+.group__form-btn-form {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 80%;
+}
+
+.group__form-btn-form p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.label__form {
+  cursor: pointer;
+  display: block;
+  font-weight: 700;
+  padding: 0.7rem;
+}
+
+.group-input__form {
+  position: relative;
+  width: 100%;
+}
+
+.input__form {
+  background-color: var(--color-bg-base);
+  border: 3px solid transparent;
+  border-bottom: 1px solid var(--color-pri-text);
+  border-radius: 3px;
+  color: var(--color-pri-text);
+  height: 45px;
+  line-height: 15px;
+  padding: 0 40px 0 10px;
+  width: 100%;
+}
+
+.input-error__form {
+  display: none;
+}
+
+.input-error__form-active {
+  display: block;
+}
+
+.input__form:focus {
+  border: 3px solid var(--color-title-text);
+  box-shadow: 3px 0 7px rgba(163, 163, 163, 0.4);
+  outline: none;
+}
+
+.validation-state__form {
+  bottom: 10px;
+  font-size: 1em;
+  opacity: 0; /* It doesn't show until I want to */
+  position: absolute;
+  right: 10px; /* Position from right to left */
+  top: 10px;
+  z-index: 99;
+}
+
+.btn__form {
+  align-items: center;
+  background-color: #32312e;
+  border-color: transparent;
+  border-radius: 6px;
+  color: var(--color-pri-text);
+  display: flex;
+  flex-flow: column nowrap;
+  font: 600 var(--font-family) calc(var(--p-size) + 1vw)/var(--p-size);
+  height: 56px;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  width: 45%;
+}
+
+.contacts {
+  margin: 0 1rem 0 1rem;
+}
+
+.footer {
+  align-items: center;
+  background-color: var(--color-light-bg);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin-top: auto;
+  padding-bottom: var(--header-height);
+  padding-top: 3rem;
+  width: 100%;
+}
+
+.contacts a {
+  color: var(--color-title-text);
+}
+
+.contacts li {
+  align-items: center;
+  box-sizing: border-box;
+  color: var(--color-title-text);
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: calc(var(--p-size));
+  gap: 1rem;
+  height: 4.5rem;
+  padding-left: 1rem;
+}
+
+.message__form {
+  display: none;
+}
+
+.submit-success__form {
+  display: none;
+}
+
 .skill:hover {
   transform: translateY(-10%);
 }
- 
-.html5:hover svg {
-  fill: #fc490b;
+
+.html5, 
+.css, 
+.js, 
+.ts, 
+.git, 
+.react, 
+.nextjs,
+.jest,
+.tw, 
+.boots, 
+.sc {
+  transition: filter  0.3s ease-in-out;
 }
 
-.css:hover svg {
-  fill: #2196f4;
+.html5:hover {
+  filter: invert(65%) sepia(70%) saturate(7496%) hue-rotate(353deg) brightness(96%) contrast(105%);
+} 
+
+.css:hover {
+  filter: invert(52%) sepia(31%) saturate(6368%) hue-rotate(186deg) brightness(101%) contrast(91%);;
 }
 
-.js:hover svg {
-  fill: #ffdf00;
+.js:hover {
+  filter: invert(77%) sepia(81%) saturate(992%) hue-rotate(359deg) brightness(303%) contrast(105%);
 }
 
-.scss:hover svg {
-  fill: #ca669b;
+.ts:hover {
+  filter: invert(36%) sepia(96%) saturate(728%) hue-rotate(179deg) brightness(91%) contrast(83%);
 }
 
-.git:hover svg {
-  fill: #f25234;
+.git:hover {
+  filter: invert(66%) sepia(71%) saturate(6297%) hue-rotate(340deg) brightness(96%) contrast(98%);
 }
 
-.react:hover rect {
-  fill: #00d1f7;
+.react:hover {
+  filter: invert(79%) sepia(43%) saturate(6583%) hue-rotate(146deg) brightness(102%) contrast(101%);
 }
 
-.ts:hover path {
-  fill: #2d79c7;
+.nextjs:hover {
+  filter: invert(100%) brightness(0%) ;
 }
 
-.nextjs:hover path {
-  fill: #000000;
+.jest:hover {
+  filter: invert(32%) sepia(28%) saturate(1174%) hue-rotate(292deg) brightness(93%) contrast(86%);
 }
 
-.tw:hover path {
-  fill: #38bdf8;
+.tw:hover {
+  filter: invert(58%) sepia(90%) saturate(586%) hue-rotate(167deg) brightness(98%) contrast(99%);
 }
 
-.boots:hover path {
-  fill: #7952b3;
+.boots:hover {
+  filter: invert(38%) sepia(19%) saturate(1882%) hue-rotate(222deg) brightness(91%) contrast(87%);
 }
 
-.sc:hover path{
-  fill:#ee3f86;
-}
-
-.jest:hover path:first-child {
-  fill:#99425b;
+.sc:hover {
+  filter: invert(43%) sepia(35%) saturate(7360%) hue-rotate(313deg) brightness(98%) contrast(91%);
 }
 
 .btn-cv:hover,
