@@ -95,7 +95,7 @@ export default function Contacts() {
             </div>        
     
             <div className="group__form-btn-form">
-              <button type="submit" className="btn__form gradient-hover-effect" disabled={isSubmitting}>Submit</button>
+              <button type="submit" className="btn__form hover:bg-[#ff830383] transition-[background-color] ease-in-out delay-300" disabled={isSubmitting}>Submit</button>
             </div> 
             {formSpreeState.submitting && (
             <Transition
@@ -156,7 +156,7 @@ export default function Contacts() {
               <div className="flex flex-col justify-center items-center absolute top-0 left-0 h-full w-full bg-[#1b1a17]">
               <p className={`mt-10 text-xl text-accent font-bold ${inconsolata.className} text-[#ff8303]`}>MESSAGE SENT!</p>
               <Link href="/">
-                <button className={`rounded-lg bg-[#ff830383] px-6 py-2 font-bold uppercase text-[#f0e3ca] hover:bg-[#ff830383] ${inconsolata.className}`}>RETURN HOME</button>
+                <button className={`rounded-lg bg-[#ff830383] transition ease-in duration-75 px-6 py-2 font-bold uppercase text-[#f0e3ca] hover:bg-[#ff830383] ${inconsolata.className}`}>RETURN HOME</button>
               </Link>
               </div>
             </Transition>
